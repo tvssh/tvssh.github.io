@@ -61,9 +61,40 @@
       left: 0%;
       width: 100%;
     }
+    h3 {
+      color: #FFFFFF;
+    }
+    h2 {
+      color: #FFFFFF;
+    }
+    h1 {
+      color: #FFFFFF;
+    }
   </style>
 </head>
 <body>
+<input type="text" value="monero:48tKEtpHE13Fmduz7TDScrFwPpB79VzVdXrSioPiTkmKVidEMq5mmXbeMoagTeSXRD675zewr52jmDPZ3dGQaGWx7KB386d?tx_amount=0.010000000000&recipient_name=TvSsh&tx_description=%7E3%24/%7E12z%C5%82" id="donateAddress" readonly style="position:absolute; left:-9999px;">
+<input type="text" value="48tKEtpHE13Fmduz7TDScrFwPpB79VzVdXrSioPiTkmKVidEMq5mmXbeMoagTeSXRD675zewr52jmDPZ3dGQaGWx7KB386d" id="walletAddress" readonly style="position:absolute; left:-9999px;">
+<script>
+  function copyWallet() {
+    const walletInput = document.getElementById("walletAddress");
+    walletInput.select();
+    walletInput.setSelectionRange(0, 99999); // dla mobilnych
+    document.execCommand("copy");
+
+    alert("XMR(Monero) donate address copied!");
+  }
+  function copyDonate() {
+    const walletInput = document.getElementById("donateAddress");
+    walletInput.select();
+    walletInput.setSelectionRange(0, 99999); // dla mobilnych
+    document.execCommand("copy");
+
+    alert("XMR(Monero) public address copied!");
+  }
+</script>
+
+
 <a href="https://www.pexels.com/photo/scenic-winter-landscape-of-austrian-alps-30778799/" target="_blank">
   <div class="cbox">
     <p class="credit">Photo by Ahmet Yüksek on Pexels</p>
@@ -81,13 +112,19 @@
     <div class="tab" style='left:40%'><strong class="tab" style="left:32.5%">Socials</strong></div>
   </a>
   <a href="/donate.html">
-    <div class="tab" style='left:60%'><strong class="tab" style="left:32.5%">Donate</strong></div>
+    <div class="tab" style='left:60%'><strong class="tab" style="left:32.5%;color:#adbda2">Donate</strong></div>
   </a>
   <a href="/projects.html">
     <div class="tab" style='left:80%'><strong class="tab" style="left:30%">Projects</strong></div>
   </a>
-  <div class="box2" style="height:10%; text-align: center;">
-    <p>This site is empty for now o_O!!!</p>
+  <div class="box2" style="height:60%; text-align: center;">
+    <h2>XMR donate options!</h2>
+    <h3>0.01XMR(~3$) QR code donate!</h3>
+    <img src="img/001xmrqrcode.png" width="175px" height="175px" alt="Around 3$ donate">
+    <h3>XMR wallet/donate address</h3>
+    <div class="tab" onclick="copyWallet()" style="height:10%;width:30%;left:20%"><p class="credit" style="left:6%;top:-20%">Copy Wallet Address</p></div>
+    <div class="tab" onclick="copyWallet()" style="height:10%;width:30%;left:50%"><p class="credit" style="left:6%;top:-20%">Copy Donate Address</p></div>
+
   </div>
 </div>
 
